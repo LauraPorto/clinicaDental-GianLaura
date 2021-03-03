@@ -1,0 +1,25 @@
+{
+  "name": "clinicadental-gianlaura",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LauraPorto/clinicaDental-GianLaura.git"
+  },
+  "author": "Gian Rondo y Laura Porto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LauraPorto/clinicaDental-GianLaura/issues"
+  },
+  "homepage": "https://github.com/LauraPorto/clinicaDental-GianLaura#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.0"
+  }
+}
