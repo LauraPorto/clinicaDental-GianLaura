@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "password",
-    "database": "clínicaDentalDB",
+    "database": "clinicaDentalDB",
     "port": "3306",
     "host": "localhost",
     "dialect": "mysql"
