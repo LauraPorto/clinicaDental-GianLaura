@@ -1,27 +1,27 @@
-const {Appoiment} = require('../models');
+const {Appointment} = require('../models');
 
-class AppoimentController {
+class AppointmentController {
     constructor(){
 
     }
 
     async indexAll(){
-        return Appoiment.findAll();
+        return Appointment.findAll();
     }
 
     async findById(id){
-        return Appoiment.findOne({where:{id}});
+        return Appointment.findOne({where:{id}});
     }
 
     async findByIdPatient(idPatient){
-        return Appoiment.findAll({where:{idPatient}});
+        return Appointment.findAll({where:{idPatient}});
     }
 
     async findByIdEmployee(idEmployee){
-        return Appoiment.findAll({where:{idEmployee}});
+        return Appointment.findAll({where:{idEmployee}});
     }
 }
 
-let appoimentController = new AppoimentController;
+let appointmentController = new AppointmentController;
 
-module.exports = appoimentController;
+module.exports = appointmentController;

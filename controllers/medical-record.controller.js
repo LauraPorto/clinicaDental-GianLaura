@@ -9,9 +9,9 @@ class MedicalRecordController {
         return MedicalRecord.findAll();
     }
 
-    async findById(id){
-        return MedicalRecord.findOne({where:{id}});
-    }
+    // async findById(id){
+    //     return MedicalRecord.findOne({where:{id}});
+    // }
 
     async findByIdPatient(idPatient){
         return MedicalRecord.findAll({where:{idPatient}});
@@ -19,6 +19,10 @@ class MedicalRecordController {
 
     async findByIdEmployee(idEmployee){
         return MedicalRecord.findAll({where:{idEmployee}});
+    }
+
+    async updateMedicalRecord(idPatient){
+        return MedicalRecord.findByIdAndUpdate({where:{idPatient}});
     }
 }
 

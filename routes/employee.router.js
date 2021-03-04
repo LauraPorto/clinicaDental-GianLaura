@@ -9,9 +9,9 @@ const employeeController = require('../controllers/employee.controller');
 //ENDPOINTS
 
 //GET para consultar todas las citas
-router.get('', async (req, res) => {
+router.get('/', async (req, res) => {
     try{
-
+        res.json(await employeeController.indexAll());
     }catch(error){
         res.status(500).json({
             message: 'Server Error'
@@ -20,43 +20,10 @@ router.get('', async (req, res) => {
 });
 
 //GET para consultar un expediente por ID
-router.get('', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try{
-
-    }catch(error){
-        res.status(500).json({
-            message: 'Server Error'
-        });
-    };
-});
-
-//POST para crear una cita
-router.post('', async (req, res) => {
-    try{
-
-    }catch(error){
-        res.status(500).json({
-            message: 'Server Error'
-        });
-    };
-});
-
-//DELETE para cancelar una cita
-router.delete('', async (req, res) => {
-    try{
-
-    }catch(error){
-        res.status(500).json({
-            message: 'Server Error'
-        });
-    };
-});
-
-
-//PUT para cambiar datos de una ficha 
-router.put('', async (req, res) => {
-    try{
-
+        let id = req.params.id;
+        res.json(await employeeController.indexAll(id));
     }catch(error){
         res.status(500).json({
             message: 'Server Error'

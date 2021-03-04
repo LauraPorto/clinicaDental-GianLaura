@@ -9,10 +9,12 @@ const patientController = require('../controllers/patient.controller');
 
 //ENDPOINTS
 
-//GET para consultar ficha médica
-router.get('', async (req, res) => {
+//GET para registrarse
+router.get('/register', async (req, res) => {
     try{
-
+        let email = req.params.email;
+        let password = req.params.password;
+        res.json(await patientController.register(email, password));
     }catch(error){
         res.status(500).json({
             message: 'Server Error'
@@ -20,10 +22,12 @@ router.get('', async (req, res) => {
     };
 });
 
-//GET para consultar cita por ID
-router.get('', async (req, res) => {
-    try{
 
+router.get('/login', async (req, res) => {
+    try{
+        let email = req.params.email;
+        let password = req.params.password;
+        res.json(await patientController.logIn(email, password));
     }catch(error){
         res.status(500).json({
             message: 'Server Error'
@@ -31,7 +35,9 @@ router.get('', async (req, res) => {
     };
 });
 
-//GET para solicitar una cita
+
+
+//PUT para modificar datos ??
 router.get('', async (req, res) => {
     try{
 
@@ -43,9 +49,10 @@ router.get('', async (req, res) => {
 });
 
 //DELETE para cancelar una cita 
-router.delete('', async (req, res) => {
+router.delete('/delete-appointment', async (req, res) => {
     try{
-
+        let id = req.params.id;
+        res.json(await patientController.destroy(id));
     }catch(error){
         res.status(500).json({
             message: 'Server Error'
