@@ -22,16 +22,20 @@ module.exports = {
       idPatient: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Patient',
+          model: 'Patients',
           key: 'id'
-        }
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       idEmployee:{
         type: Sequelize.INTEGER,
         references: {
-          model: 'Employee',
+          model: 'Employees',
           key: 'id'
-        }
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       }
     });
   },
