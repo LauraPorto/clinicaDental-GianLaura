@@ -49,7 +49,7 @@ router.get('/login', async (req, res) => {
 });
 
 //GET para logout
-router.get('/login', async (req, res) => {
+router.get('/logout', async (req, res) => {
     try{
         let email = req.params.email;
         let password = req.params.password;
@@ -66,7 +66,7 @@ router.get('/login', async (req, res) => {
 });
 
 //DELETE para pacientes
-router.get('/delete-patient/:id', async (req, res) => {
+router.delete('/delete-patient/:id', async (req, res) => {
     try{
         let id = req.params.id;
         let result = await patientController.deletePatient(id);

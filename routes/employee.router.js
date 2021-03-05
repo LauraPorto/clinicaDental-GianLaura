@@ -15,7 +15,7 @@ router.get('/employee', async (req, res) => {
 });
 
 //GET para consultar un expediente por ID
-router.get('employee/:id', async (req, res) => {
+router.get('/employee/:id', async (req, res) => {
     try{
         let id = req.params.id;
         res.json(await employeeController.findById(id));
