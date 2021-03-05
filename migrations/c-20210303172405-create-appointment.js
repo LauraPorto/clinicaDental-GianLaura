@@ -24,14 +24,18 @@ module.exports = {
         references: {
           model: 'Patients',
           key: 'id'
-        }
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       idEmployee:{
         type: Sequelize.INTEGER,
         references: {
-          model: 'Employee',
+          model: 'Employees',
           key: 'id'
-        }
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       }
     });
   },

@@ -1,4 +1,5 @@
 const router = require('express').Router();
+<<<<<<< HEAD
 
 const appointmentRouter = require('./routes/appointment.router');
 const patientRouter = require('./routes/patient.router');
