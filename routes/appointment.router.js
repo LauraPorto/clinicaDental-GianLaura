@@ -4,7 +4,7 @@ const appointmentController = require('../controllers/appointment.controller');
 //ENDPOINTS
 
 //GET para consultar todas las citas 
-router.get('/', async (req, res) => {
+router.get('/appointment', async (req, res) => {
     try{
         res.json(await appointmentController.indexAll());
     }catch(error){
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 });
 
 //GET para consultar las citas por ID
-router.get('/:id', async (req, res) => {
+router.get('/appointment/:id', async (req, res) => {
     try{
         let id = req.params.id;
         res.json(await appointmentController.findById(id));
@@ -26,11 +26,13 @@ router.get('/:id', async (req, res) => {
     };
 });
 
-//GET para crear citas por ID paciente 
-router.post('/patient/:id', async (req, res) => {
+//POST para crear una cita
+router.post('/appointment-create/:id', async (req, res) => {
     try{
         let idPatient = req.params.idPatient;
-        res.json(await appointmentController.createAppointment(idPatient));
+        let status = 'Appointment created';
+        let newAppointment = await appointmentController.createAppointment(idPatient);
+        res.json({newAppointment, status});
     }catch(error){
         res.status(500).json({
             message: 'Server Error' + error
@@ -39,10 +41,12 @@ router.post('/patient/:id', async (req, res) => {
 });
 
 //DELETE para eliminar cita
-router.delete('/employee/:id', async (req, res) => {
+router.delete('/appointment-delete/:id', async (req, res) => {
     try{
         let idEmployee = req.params.idEmployee;
-        res.json(await appointmentController.deleteAppointment(idEmployee));
+        let result = await appointmentController.deleteAppointment(idEmployee);
+        let status = 'Appointment deleted'
+        res.json({result, status});
     }catch(error){
         res.status(500).json({
             message: 'Server Error' + error

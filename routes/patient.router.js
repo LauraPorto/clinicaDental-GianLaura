@@ -3,12 +3,14 @@ const patientController = require('../controllers/patient.controller');
 
 //ENDPOINTS
 
-//GET para registrarse
-router.get('/register', async (req, res) => {
+//POST para registrarse
+router.post('/register', async (req, res) => {
     try{
         let email = req.params.email;
         let password = req.params.password;
-        res.json(await patientController.register(email, password));
+        let status = 'Patient created';
+        let newPatient = await patientController.register(email, password); 
+        res.json({newPatient, status});
     }catch(error){
         res.status(500).json({
             message: 'Server Error' + error
@@ -16,14 +18,77 @@ router.get('/register', async (req, res) => {
     };
 });
 
+//GET para id paciente
+router.get('/:id', async (req, res) => {
+    try{
+        let id = req.params.id;
+        res.json(await patientController.findById(id));
+    }catch(error){
+        res.status(500).json({
+            message: 'Server Error' + error
+        });
+    };
+});
+
+
+//GET para login
 router.get('/login', async (req, res) => {
     try{
         let email = req.params.email;
         let password = req.params.password;
-        res.json(await patientController.logIn(email, password));
+        let status = 'Log In !';
+
+        let newPatient = await patientController.register(email, password); 
+
+        res.json(status);
     }catch(error){
         res.status(500).json({
             message: 'Server Error' + error
+        });
+    };
+});
+
+//GET para logout
+router.get('/login', async (req, res) => {
+    try{
+        let email = req.params.email;
+        let password = req.params.password;
+        let status = 'Log In !';
+
+        let newPatient = await patientController.register(email, password); 
+
+        res.json(status);
+    }catch(error){
+        res.status(500).json({
+            message: 'Server Error' + error
+        });
+    };
+});
+
+//DELETE para pacientes
+router.get('/delete-patient/:id', async (req, res) => {
+    try{
+        let id = req.params.id;
+        let result = await patientController.deletePatient(id);
+        let status = 'Patient deleted';
+        res.json({status, result});
+    }catch(error){
+        res.status(500).json({
+            message: 'Server Error' + error
+        });
+    };
+});
+
+//PUT para modificar datos de paciente
+router.put('/update-patient/:id', async(req, res) => {
+    try {
+        const id = req.params.id;
+        const status = 'Success update';
+        const result = await patientController.update(id);
+        res.json({status, result});
+    } catch (error) {
+        return status(500).json({
+            message: "Server Error"
         });
     };
 });

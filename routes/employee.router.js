@@ -4,7 +4,7 @@ const employeeController = require('../controllers/employee.controller');
 //ENDPOINTS
 
 //GET para consultar todas las citas
-router.get('/', async (req, res) => {
+router.get('/employee', async (req, res) => {
     try{
         res.json(await employeeController.indexAll());
     }catch(error){
@@ -15,10 +15,10 @@ router.get('/', async (req, res) => {
 });
 
 //GET para consultar un expediente por ID
-router.get('/:id', async (req, res) => {
+router.get('employee/:id', async (req, res) => {
     try{
         let id = req.params.id;
-        res.json(await employeeController.indexAll(id));
+        res.json(await employeeController.findById(id));
     }catch(error){
         res.status(500).json({
             message: 'Server Error' + error

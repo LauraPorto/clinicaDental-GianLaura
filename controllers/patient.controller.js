@@ -23,7 +23,6 @@ class PatientController {
 
     async update(id){
         return Patient.findByIdAndUpdate({where:{id}});
-        //Return new Appointment?
     }
 
     async deletePatient (id){
