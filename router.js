@@ -6,5 +6,4 @@ const patientRouter = require('./routes/patient.router');
 const medicalRouter = require('./routes/medical.router');
 const employeeRouter = require('./routes/employee.router');
 
-
 module.exports = router;
