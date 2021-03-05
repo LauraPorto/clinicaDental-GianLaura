@@ -14,11 +14,7 @@ medicalrecords = medicalrecords.map((medicalrecord) => ({...medicalrecord, updat
 module.exports = {
   up: async (queryInterface, Sequelize) => {
 
-<<<<<<< HEAD
     await queryInterface.bulkInsert('MedicalRecords', medicalrecords); 
-=======
-    await queryInterface.bulkInsert('Medicalrecords', medicalrecords); 
->>>>>>> main
 
   },
 
