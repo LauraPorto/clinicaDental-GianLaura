@@ -1,9 +1,7 @@
 const {Employee} = require('../models');
 
 class EmployeeController {
-    constructor(){
-
-    }
+    constructor(){}
 
     async indexAll(){
         return Employee.findAll();

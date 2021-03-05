@@ -1,31 +1,32 @@
 const {Patient} = require('../models');
 
 class PatientController {
-    constructor(){
-
-    }
+    constructor(){}
 
     // async indexAll(){
     //     return Patient.findAll();
     // }
 
-    // async findById(id){
-    //     return Patient.FindOne({where:{id}});
-    // }
+    async findById(id){
+         return Patient.FindOne({where:{id}});
+    }
+
     async register(email, password){
         return Patient.create(email, password);
     }
+
     async logIn (email, password){
         return Patient.FindOne({where:{email, password}});
     }
-    async logOut (){
 
-    }
+    async logOut (){}
+
     async update(id){
         return Patient.findByIdAndUpdate({where:{id}});
         //Return new Appointment?
     }
-    async destroy (id){
+
+    async deletePatient (id){
         return Patient.findByIdAndRemove({where:{id}});
     }
 }

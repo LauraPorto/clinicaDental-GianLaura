@@ -1,9 +1,7 @@
 const {Appointment} = require('../models');
 
 class AppointmentController {
-    constructor(){
-
-    }
+    constructor(){}
 
     async indexAll(){
         return Appointment.findAll();
@@ -13,12 +11,12 @@ class AppointmentController {
         return Appointment.findOne({where:{id}});
     }
 
-    async findByIdPatient(idPatient){
-        return Appointment.findAll({where:{idPatient}});
+    async createAppointment(){
+        return;
     }
 
-    async findByIdEmployee(idEmployee){
-        return Appointment.findAll({where:{idEmployee}});
+    async deleteAppointment(){
+        return;
     }
 }
 
