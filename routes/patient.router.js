@@ -66,7 +66,7 @@ router.get('/logout', async (req, res) => {
 });
 
 //DELETE para pacientes
-router.delete('/delete-patient/:id', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
     try{
         let id = req.params.id;
         let result = await patientController.deletePatient(id);
@@ -80,7 +80,7 @@ router.delete('/delete-patient/:id', async (req, res) => {
 });
 
 //PUT para modificar datos de paciente
-router.put('/update-patient/:id', async(req, res) => {
+router.put('/update/:id', async(req, res) => {
     try {
         const id = req.params.id;
         const status = 'Success update';
