@@ -1,9 +1,4 @@
 const router = require('express').Router();
-
-// Employee se relaciona con cita y con ficha médica
-//const appointmentRouter = require('../routes/appointment.router');
-//const medicalRouter = require('../routes/medical.router');
-
 const employeeController = require('../controllers/employee.controller');
 
 //ENDPOINTS
@@ -14,7 +9,7 @@ router.get('/', async (req, res) => {
         res.json(await employeeController.indexAll());
     }catch(error){
         res.status(500).json({
-            message: 'Server Error'
+            message: 'Server Error' + error
         });
     };
 });
@@ -26,7 +21,7 @@ router.get('/:id', async (req, res) => {
         res.json(await employeeController.indexAll(id));
     }catch(error){
         res.status(500).json({
-            message: 'Server Error'
+            message: 'Server Error' + error
         });
     };
 });
