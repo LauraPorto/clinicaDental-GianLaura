@@ -4,7 +4,7 @@ const appointmentController = require('../controllers/appointment.controller');
 //ENDPOINTS
 
 //GET para consultar todas las citas 
-router.get('/appointment', async (req, res) => {
+router.get('/all', async (req, res) => {
     try{
         res.json(await appointmentController.indexAll());
     }catch(error){
@@ -15,7 +15,7 @@ router.get('/appointment', async (req, res) => {
 });
 
 //GET para consultar las citas por ID
-router.get('/appointment/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try{
         let id = req.params.id;
         res.json(await appointmentController.findById(id));
@@ -27,7 +27,7 @@ router.get('/appointment/:id', async (req, res) => {
 });
 
 //POST para crear una cita
-router.post('/appointment-create/:id', async (req, res) => {
+router.post('/create/:id', async (req, res) => {
     try{
         let idPatient = req.params.idPatient;
         let status = 'Appointment created';
@@ -41,7 +41,7 @@ router.post('/appointment-create/:id', async (req, res) => {
 });
 
 //DELETE para eliminar cita
-router.delete('/appointment-delete/:id', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
     try{
         let idEmployee = req.params.idEmployee;
         let result = await appointmentController.deleteAppointment(idEmployee);

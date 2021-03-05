@@ -4,7 +4,7 @@ const medicalRecordController = require('../controllers/medical-record.controlle
 //ENDPOINTS
 
 //GET para consultar todas las fichas médicas
-router.get('/medical-record', async (req, res) => {
+router.get('/all', async (req, res) => {
     try{
         res.json(await medicalRecordController.indexAll());
     }catch(error){
@@ -15,7 +15,7 @@ router.get('/medical-record', async (req, res) => {
 });
 
 //GET para consultar por id de paciente
-router.get('medical-record/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try{
         let id = req.params.idPatient;
         res.json(await medicalRecordController.findById(id));
