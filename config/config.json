@@ -3,7 +3,7 @@
     "username": "root",
     "password": "password",
     "database": "clinicaDentalDB",
-    "port": "3307",
+    "port": "3306",
     "host": "localhost",
     "dialect": "mysql"
   },
