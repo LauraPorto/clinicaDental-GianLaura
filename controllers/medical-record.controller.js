@@ -11,6 +11,10 @@ class MedicalRecordController {
         return MedicalRecord.findOne({where:{id}});
     }
 
+    async update(mr, id){
+        return MedicalRecord.update(mr, {where:{id}});
+    }
+
     
 }
 

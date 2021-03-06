@@ -18,6 +18,10 @@ class AppointmentController {
     async deleteAppointment(idEmployee){
         return Appointment.destroy({where:{idEmployee}});
     }
+
+    async update(appointment, id){
+        return Appointment.update(appointment, {where:{id}});
+    }
 }
 
 let appointmentController = new AppointmentController;
