@@ -10,20 +10,22 @@ module.exports = (sequelize, DataTypes) => {
         
         static associate(models) {
             // define association here
-            this.belongsTo(models, Patient), {
+            this.belongsTo(models.Patient, {
                 foreingKey: 'idPatient',
                 targetKey: 'id'
-            }
+            });
 
-            this.belongsTo(models, Employee), {
+            this.belongsTo(models.Employee, {
                 foreingKey: 'idEmployee',
                 targetKey: 'id'
-            }
+            });
         }
     };
     
     Appointment.init({
-        date: DataTypes.DATE
+        date: DataTypes.DATE,
+        idPatient: DataTypes.INTEGER,
+        idEmployee: DataTypes.INTEGER
     }, {
         sequelize,
         modelName: 'Appointment',

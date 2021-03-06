@@ -9,25 +9,27 @@ module.exports = (sequelize, DataTypes) => {
 
         static associate(models) {
             // define association here
-            this.belongsTo(models, Patient), {
+            this.belongsTo(models.Patient, {
                 foreingKey: 'idPatient',
                 targetKey: 'id'
-            }
+            });
 
-            this.belongsTo(models, Employee), {
+            this.belongsTo(models.Employee, {
                 foreingKey: 'idEmployee',
                 targetKey: 'id'
-            }
+            });
         }
 
     };
 
     MedicalRecord.init({
         description: DataTypes.STRING,
-        allergy: DataTypes.STRING
+        allergy: DataTypes.STRING,
+        idPatient: DataTypes.INTEGER,
+        idEmployee: DataTypes.INTEGER
     }, {
         sequelize,
-        modelName: 'Medicalrecord',
+        modelName: 'MedicalRecord',
     });
     return MedicalRecord;
 };
