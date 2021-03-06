@@ -91,13 +91,13 @@ router.delete('/delete/:id', async (req, res) => {
 //PUT para modificar datos de paciente
 router.put('/update/:id', async(req, res) => {
     try {
-        const id = req.params.id;
-        const status = 'Success update';
-        const result = await patientController.update(id);
+        let id = req.params.id;
+        let status = 'Success update';
+        let result = await patientController.update(req.body, id);
         res.json({status, result});
     } catch (error) {
-        return status(500).json({
-            message: "Server Error"
+        res.status(500).json({
+            message: "Server Error" + error
         });
     };
 });

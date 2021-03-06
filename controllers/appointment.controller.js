@@ -11,12 +11,12 @@ class AppointmentController {
         return Appointment.findOne({where:{id}});
     }
 
-    async createAppointment(idPatient){
-        return Appointment.create(idPatient);
+    async createAppointment(appointment){
+        return Appointment.create(appointment);
     }
 
-    async deleteAppointment(idEmployee){
-        return Appointment.destroy({where:{idEmployee}});
+    async deleteAppointment(id){
+        return Appointment.destroy({where:{id}});
     }
 }
 

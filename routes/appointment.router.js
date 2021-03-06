@@ -27,11 +27,10 @@ router.get('/:id', async (req, res) => {
 });
 
 //POST para crear una cita
-router.post('/create/:id', async (req, res) => {
+router.post('/create', async (req, res) => {
     try{
-        let idPatient = req.params.idPatient;
         let status = 'Appointment created';
-        let newAppointment = await appointmentController.createAppointment(idPatient);
+        let newAppointment = await appointmentController.createAppointment(req.body);
         res.json({newAppointment, status});
     }catch(error){
         res.status(500).json({
@@ -43,8 +42,8 @@ router.post('/create/:id', async (req, res) => {
 //DELETE para eliminar cita
 router.delete('/delete/:id', async (req, res) => {
     try{
-        let idEmployee = req.params.idEmployee;
-        let result = await appointmentController.deleteAppointment(idEmployee);
+        let id = req.params.id;
+        let result = await appointmentController.deleteAppointment(id);
         let status = 'Appointment deleted'
         res.json({result, status});
     }catch(error){

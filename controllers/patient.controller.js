@@ -24,12 +24,12 @@ class PatientController {
 
     async logOut (){}
 
-    async update(id){
-        return Patient.findByIdAndUpdate({where:{id}});
+    async update(patient, id){
+        return Patient.update(patient, {where:{id}});
     }
 
     async deletePatient (id){
-        return Patient.findByIdAndRemove({where:{id}});
+        return Patient.destroy({where:{id}});
     }
 }
 

@@ -17,7 +17,7 @@ router.get('/all', async (req, res) => {
 //GET para consultar por id de paciente
 router.get('/:id', async (req, res) => {
     try{
-        let id = req.params.idPatient;
+        let id = req.params.id;
         res.json(await medicalRecordController.findById(id));
     }catch(error){
         res.status(500).json({
