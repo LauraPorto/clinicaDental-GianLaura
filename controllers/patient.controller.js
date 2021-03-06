@@ -8,15 +8,15 @@ class PatientController {
     // }
 
     async findById(id){
-         return Patient.FindOne({where:{id}});
+         return Patient.findOne({where:{id}});
     }
 
-    async register(email, password){
-        return Patient.create(email, password);
+    async register(patient){
+        return Patient.create(patient);
     }
 
     async logIn (email, password){
-        return Patient.FindOne({where:{email, password}});
+        return Patient.findOne({where:{email, password}});
     }
 
     async logOut (){}

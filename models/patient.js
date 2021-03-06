@@ -11,12 +11,12 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
             this.hasMany(models.Appointment, {
                 sourceKey: 'id',
-                foreignKey: 'patient'
+                foreignKey: 'idPatient'
             });
 
             this.hasMany(models.MedicalRecord, {
                 sourceKey: 'id',
-                foreignKey: 'patient'
+                foreignKey: 'idPatient'
             });
         }
     };

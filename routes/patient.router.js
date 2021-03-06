@@ -6,10 +6,8 @@ const patientController = require('../controllers/patient.controller');
 //POST para registrarse
 router.post('/register', async (req, res) => {
     try{
-        let email = req.params.email;
-        let password = req.params.password;
         let status = 'Patient created';
-        let newPatient = await patientController.register(email, password); 
+        let newPatient = await patientController.register(req.body); 
         res.json({newPatient, status});
     }catch(error){
         res.status(500).json({
@@ -22,7 +20,13 @@ router.post('/register', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try{
         let id = req.params.id;
-        res.json(await patientController.findById(id));
+        let patient = await patientController.findById(id);
+        if(patient){
+            res.json(patient);
+        }else{
+            res.sendStatus(404);
+        }
+        
     }catch(error){
         res.status(500).json({
             message: 'Server Error' + error
