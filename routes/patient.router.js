@@ -40,11 +40,16 @@ router.get('/login', async (req, res) => {
     try{
         let email = req.params.email;
         let password = req.params.password;
-        let status = 'Log In !';
+        //let status = 'Log In !';
 
-        let newPatient = await patientController.register(email, password); 
+        let token = await patientController.logIn(email, password); 
 
-        res.json(status);
+        if(token){
+            res.json(token);
+        }else{
+            res.sendStatus(403);
+        }
+        
     }catch(error){
         res.status(500).json({
             message: 'Server Error' + error

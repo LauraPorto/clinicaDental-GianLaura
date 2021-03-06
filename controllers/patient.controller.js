@@ -16,6 +16,9 @@ class PatientController {
     }
 
     async logIn (email, password){
+
+        /*Logica de login con token*/
+
         return Patient.findOne({where:{email, password}});
     }
 
