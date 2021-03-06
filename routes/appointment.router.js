@@ -53,4 +53,18 @@ router.delete('/delete/:id', async (req, res) => {
     };
 });
 
+//UPDATE para modificar datos de la cita
+router.put('/update/:id', async (req, res) => {
+    try{
+        let id = req.params.id;
+        let result = await appointmentController.update(req.body);
+        let status = 'Appointment deleted'
+        res.json({result, status});
+    }catch(error){
+        res.status(500).json({
+            message: 'Server Error' + error
+        });
+    };
+});
+
 module.exports = router; 
