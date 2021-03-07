@@ -12,7 +12,7 @@
 
 ---
 
-<p align="center"> This is our first proyect using the ORM - Sequelize
+<p align="center"> This is our first project using the ORM - Sequelize
     <br> 
 </p>
 
