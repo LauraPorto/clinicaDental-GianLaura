@@ -1,4 +1,6 @@
 'use strict';
+const bcrypt = require('bcrypt');
+
 
 let patients = [
   {
@@ -10,7 +12,7 @@ let patients = [
     address: "Calle Roger de Lauria, 30", 
     email: "giancarlorondo@outlock.com", 
     phone: 123456789, 
-    password: 1234
+    password: bcrypt.hashSync('1234',6)
   }, {
     name: "Laura",
     surname1: "Porto",
@@ -20,7 +22,7 @@ let patients = [
     address: "Calle Reverendo Rafael Tramoyeres, 31", 
     email: "lauuralaura@outlock.com", 
     phone: 648498786, 
-    password: 4321
+    password: bcrypt.hashSync('4321',6)
   }];
 
 patients = patients.map((patient) => ({...patient, updatedAt: new Date, createdAt: new Date}));

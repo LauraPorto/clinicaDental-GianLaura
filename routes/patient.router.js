@@ -35,17 +35,17 @@ router.get('/:id', async (req, res) => {
 });
 
 
-//GET para login
-router.get('/login', async (req, res) => {
+//POST para login
+//Cambio a Post para no pasar la contraseña por la URL, no queda en el historial
+router.post('/login', async (req, res) => {
     try{
-        let email = req.params.email;
-        let password = req.params.password;
-        //let status = 'Log In !';
+        let email = req.body.email;
+        let password = req.body.password;
 
         let token = await patientController.logIn(email, password); 
 
         if(token){
-            res.json(token);
+            res.json({token});
         }else{
             res.sendStatus(403);
         }
@@ -60,13 +60,7 @@ router.get('/login', async (req, res) => {
 //GET para logout
 router.get('/logout', async (req, res) => {
     try{
-        let email = req.params.email;
-        let password = req.params.password;
-        let status = 'Log In !';
-
-        let newPatient = await patientController.register(email, password); 
-
-        res.json(status);
+        res.sendStatus(200);
     }catch(error){
         res.status(500).json({
             message: 'Server Error' + error

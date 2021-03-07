@@ -2,9 +2,9 @@
 
 let appointments = [
   {
-    date: new Date()
+    date: new Date('2022.01.02')
   }, {
-    date: new Date()
+    date: new Date
   }];
 
 appointments = appointments.map((appointment) => ({...appointment, updatedAt: new Date, createdAt: new Date}));

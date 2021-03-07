@@ -13,6 +13,16 @@ router.get('/all', async (req, res) => {
         });
     };
 });
+//GET para consultar citas pendientes
+router.get('/next', async (req, res) => {
+    try{
+        res.json(await appointmentController.findNextAppointments());
+    }catch(error){
+        res.status(500).json({
+            message: 'Server Error' + error
+        });
+    };
+});
 
 //GET para consultar las citas por ID
 router.get('/:id', async (req, res) => {
