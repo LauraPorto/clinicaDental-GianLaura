@@ -12,23 +12,22 @@
 
 ---
 
-<p align="center"> This is ours first proyect using the ORM - Sequelize
+<p align="center"> This is our first proyect using the ORM - Sequelize
     <br> 
 </p>
 
 ## 📝 Table of Contents
 
-- [Idea / Solution](#idea)
-- [Dependencies / Limitations](#limitations)
-- [Future Scope](#future_scope)
-- [Setting up a local environment](#getting_started)
-- [Usage](#usage)
-- [Technology Stack](#tech_stack)
-- [Contributing](../CONTRIBUTING.md)
+- [Built With](#built)
+- [Relational Table - SQL](#relational_table)
+- [Testing with Postman](#testing)
+- [Prerequisites](#prerequisites)
+- [Start Project](#start-project)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgments)
 
-## ⛏️ Built With <a name = "tech_stack"></a>
+
+## ⛏️ Built With <a name = "built"></a>
 
 - [Express](https://expressjs.com/) - Server Framework
 - [NodeJs](https://nodejs.org/en/) - Server Environment
@@ -37,9 +36,10 @@
 - [Postman](https://learning.postman.com/docs/getting-started/introduction/) - Server Environment
 - [Docker](https://docs.docker.com/) - Server Deployment
 - [GitFlow](https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow) - Work flow
+- [bcrypt](https://www.npmjs.com/package/bcrypt) - Encryption Library 
+- [jwt](https://jwt.io/) - Librery for Token Signing
 
-
-## 💡 Idea / Solution <a name = "idea"></a>
+## 💡 Relational Table - SQL <a name = "relational_table"></a>
 
 ![image](https://user-images.githubusercontent.com/56218293/110155333-c3269300-7de5-11eb-8445-5e4b92a57f63.png)
 
@@ -49,11 +49,10 @@ Once the ideal, reality, and consequences sections have been
 completed, and understood, it becomes easier to provide a solution for solving the problem.
 
 
-## 🎈 Testing whit Postman <a name="usage"></a>
-- [Postman](https://www.postman.com/) - Api Development 
-
-Add notes about how to use the system.
+## 🎈 Testing with Postman <a name="testing"></a>
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/4687355afef252d397b5)
+
+- [Postman](https://www.postman.com/) - Api Development 
 
 
 **Register**, **Login** and **Comprobation** of the exist **Patient**.
@@ -68,54 +67,44 @@ Add notes about how to use the system.
 Search **All Medical Records**, Search for **Id** and **Update** the dates.
 ![Grabación de pantalla 2021-03-07 a las 15 55 38](https://user-images.githubusercontent.com/56218293/110244294-51258980-7f5e-11eb-804c-8d10d628edb8.gif)
 
+- [Postman Documentation](https://documenter.getpostman.com/view/14677557/Tz5jfLn7) - Server Framework
 
-https://documenter.getpostman.com/view/14677557/Tz5jfLn7
+![Grabación de pantalla 2021-03-07 a las 17 24 09](https://user-images.githubusercontent.com/56218293/110247046-74eecc80-7f6a-11eb-87fb-cedc016b14c2.gif)
 
 
-## ⛓️ Dependencies / Limitations <a name = "limitations"></a>
 
-- What are the dependencies of your project?
-- Describe each limitation in detailed but concise terms
-- Explain why each limitation exists
-- Provide the reasons why each limitation could not be overcome using the method(s) chosen to acquire.
-- Assess the impact of each limitation in relation to the overall findings and conclusions of your project, and if
-  appropriate, describe how these limitations could point to the need for further research.
 
-## 🚀 Future Scope <a name = "future_scope"></a>
+### Prerequisites  <a name="prerequisites"></a>
 
-Write about what you could not develop during the course of the Hackathon; and about what your project can achieve
-in the future.
+Install libraries with:
 
-## 🏁 Getting Started <a name = "getting_started"></a>
-
-These instructions will get you a copy of the project up and running on your local machine for development
-and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them.
-
-```
-Give examples
+```bash
+  npm i
 ```
 
-### Installing
+### Start Project <a name="start-project"></a>
 
 A step by step series of examples that tell you how to get a development env running.
 
-Say what the step will be
 
+```bash
+  npm start
 ```
-Give the example
-```
-
-And repeat
-
-```
-until finished
+```bash
+  docker-compose up
 ```
 
+For create *DataBase* whit **Sequelize** you need..
 
+```bash
+  sequelize db:create
+```
+```bash
+  sequelize db:migrate 
+```
+```bash
+  sequelize db:seed:all 
+```
 
 
 
