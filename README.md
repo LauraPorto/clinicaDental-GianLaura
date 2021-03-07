@@ -40,13 +40,9 @@
 - [jwt](https://jwt.io/) - Librery for Token Signing
 
 ## 💡 Relational Table - SQL <a name = "relational_table"></a>
+This is a basic example of relational table about our project, emulating a structure database of a dental clinic. 
 
 ![image](https://user-images.githubusercontent.com/56218293/110155333-c3269300-7de5-11eb-8445-5e4b92a57f63.png)
-
-This section is used to describe potential solutions.
-
-Once the ideal, reality, and consequences sections have been
-completed, and understood, it becomes easier to provide a solution for solving the problem.
 
 
 ## 🎈 Testing with Postman <a name="testing"></a>
