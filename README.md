@@ -25,6 +25,7 @@
 - [Start Project](#start-project)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgments)
+- [Git Flow](#gitFlow)
 
 
 ## ⛏️ Built With <a name = "built"></a>
@@ -106,6 +107,9 @@ For create *DataBase* whit **Sequelize** you need..
   sequelize db:seed:all 
 ```
 
+## ⛏️ Git Flow <a name = "gitFlow"></a>
+
+![Grabación de pantalla 2021-03-08 a las 10 19 52](https://user-images.githubusercontent.com/56218293/110301700-ad3cec00-7ff8-11eb-8511-5abb09cd8c3b.gif)
 
 
 ## ✍️ Authors <a name = "authors"></a>
