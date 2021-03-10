@@ -42,9 +42,10 @@ router.post('/login', async (req, res) => {
         
         let email = req.body.email;
         let password = req.body.password;
+
         console.log('Comprobación del post login', email, password);
-        let token = await patientController.logIn(email, password); 
         
+        let token = await patientController.logIn(email, password); 
         
         if(token){
             res.json({token});
