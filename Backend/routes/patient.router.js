@@ -39,11 +39,13 @@ router.get('/:id', async (req, res) => {
 //Cambio a Post para no pasar la contraseña por la URL, no queda en el historial
 router.post('/login', async (req, res) => {
     try{
+        
         let email = req.body.email;
         let password = req.body.password;
-
+        console.log('Comprobación del post login', email, password);
         let token = await patientController.logIn(email, password); 
-
+        
+        
         if(token){
             res.json({token});
         }else{
