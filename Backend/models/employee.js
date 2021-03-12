@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
         surname1: DataTypes.STRING,
         surname2: DataTypes.STRING,
         specialty: DataTypes.STRING
+        //admin: DataTypes.BOOLEAN
     }, {
         sequelize,
         modelName: 'Employee',

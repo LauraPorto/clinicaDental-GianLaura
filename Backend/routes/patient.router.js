@@ -42,10 +42,12 @@ router.post('/login', async (req, res) => {
         
         let email = req.body.email;
         let password = req.body.password;
+        //let admin = req.body.admin;
 
         console.log('Comprobación del post login', email, password);
         
         let token = await patientController.logIn(email, password); 
+        //let token = await patientController.logIn(email, password, admin);
         
         if(token){
             res.json({token});
@@ -84,6 +86,7 @@ router.delete('/delete/:id', async (req, res) => {
         });
     };
 });
+
 
 //PUT para modificar datos de paciente
 router.put('/update/:id', async(req, res) => {

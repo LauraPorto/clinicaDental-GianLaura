@@ -12,6 +12,10 @@ const auth = async (req, res, next) => {
     try{
         const authorization = req.headers.authorization;
         const payload = jwt.verify(authorization, secret);
+        //##############
+        //Extraemos el valor de administrador para saber si entrará a las rutas como empleado o como paciente
+        //const admin = req.body.admin;
+        //jwt.verify(authorization, secret, admin)
         next();
     }catch(error){
         res.sendStatus(403);

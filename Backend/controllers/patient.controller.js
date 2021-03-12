@@ -25,7 +25,7 @@ class PatientController {
     }
 
     async logIn (email, password){
-
+        //############Añadiríamos el parámetro admin de patient
         //Busco el patient por email
         const patient = await Patient.findOne({where:{email}});
 
@@ -41,9 +41,15 @@ class PatientController {
         //informacion guardada en el token
         const payload = {
             patientId : patient.id,
-            tokenCreationDate: new Date
+            tokenCreationDate: new Date,
+            admin: patient.admin
+            
+            //#################propiedad de payload para poder firmar el token mediante el booleano true(employee), false (pacient)
+            //Añadir un require en los modelos de empleado y paciente??
+
             //Le puedo poner la informacion que quiera, como el rol del usuario (adm, permisos...)
         };
+
 
         //Devuelvo un json del payload firmado
         return jwt.sign(payload, secret); 
