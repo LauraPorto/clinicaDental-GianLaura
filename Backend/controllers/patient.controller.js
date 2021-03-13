@@ -41,8 +41,8 @@ class PatientController {
         //informacion guardada en el token
         const payload = {
             patientId : patient.id,
-            tokenCreationDate: new Date,
-            admin: patient.admin
+            tokenCreationDate: new Date
+            //admin: patient.admin
             
             //#################propiedad de payload para poder firmar el token mediante el booleano true(employee), false (pacient)
             //Añadir un require en los modelos de empleado y paciente??

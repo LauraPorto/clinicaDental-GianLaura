@@ -1,18 +1,33 @@
 'use strict';
+const bcrypt = require('bcrypt');
 
 let employees = [
   {
     name: "Rodrigo", 
     surname1: "Perez", 
     surname2: "Gonzalez", 
-    specialty: "orthodontist"
-    //admin: true
+    age: 34, 
+    gender: "M", 
+    email: "rodridentis@gmail.com", 
+    address: "Calle Piruleta 3", 
+    phone: 568473988,
+    password: bcrypt.hashSync("Dentist1$",6), 
+    birth: "1987.10.10",
+    specialty: "orthodontist",
+    admin: true
   }, {
     name: "Jessica", 
     surname1: "Rodriguez", 
     surname2: "Torres", 
-    specialty: "hygienist"
-    //admin: true
+    age: 30, 
+    gender: "F", 
+    email: "jessidentis@gmail.com", 
+    address: "Calle Piruleta 3", 
+    phone: 568473988,
+    password: bcrypt.hashSync("Dentist1$",6), 
+    birth: "1991.10.10",
+    specialty: "hygienist",
+    admin: true
   }];
 
   employees = employees.map((employee) => ({...employee, updatedAt: new Date, createdAt: new Date}));

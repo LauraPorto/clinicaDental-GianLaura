@@ -17,8 +17,32 @@ module.exports = {
       surname2: {
         type: Sequelize.STRING
       },
+      age: {
+        type: Sequelize.INTEGER
+      }, 
+      gender: {
+        type: Sequelize.STRING
+      },
+      email: {
+        type: Sequelize.STRING
+      },
+      address: {
+        type: Sequelize.STRING
+      },
+      phone: {
+        type: Sequelize.INTEGER
+      },
+      password: {
+        type: Sequelize.STRING
+      },
+      birth: {
+        type: Sequelize.DATE
+      },
       specialty: {
         type: Sequelize.STRING
+      },
+      admin: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
