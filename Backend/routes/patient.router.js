@@ -50,7 +50,7 @@ router.post('/login', async (req, res) => {
         //let token = await patientController.logIn(email, password, admin);
         
         if(token){
-            res.json({token});
+            res.json(token);
         }else{
             res.sendStatus(403);
         }

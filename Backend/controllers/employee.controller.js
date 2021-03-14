@@ -52,7 +52,10 @@ class EmployeeController {
 
 
         //Devuelvo un json del payload firmado
-        return jwt.sign(payload, secret); 
+        return {
+            token: jwt.sign(payload, secret),
+            id: employee.id
+        }; 
     }
 
     async logOut (){}

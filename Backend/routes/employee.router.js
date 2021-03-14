@@ -59,7 +59,7 @@ router.post('/login', async (req, res) => {
         let token = await employeeController.logIn(email, password); 
         
         if(token){
-            res.json({token});
+            res.json(token);
         }else{
             res.sendStatus(403);
         }
