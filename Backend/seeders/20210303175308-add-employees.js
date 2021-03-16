@@ -13,8 +13,7 @@ let employees = [
     phone: 568473988,
     password: bcrypt.hashSync("Dentist1$",6), 
     birth: "1987.10.10",
-    specialty: "orthodontist",
-    admin: true
+    specialty: "orthodontist"
   }, {
     name: "Jessica", 
     surname1: "Rodriguez", 
@@ -26,8 +25,7 @@ let employees = [
     phone: 568473988,
     password: bcrypt.hashSync("Dentist1$",6), 
     birth: "1991.10.10",
-    specialty: "hygienist",
-    admin: true
+    specialty: "hygienist"
   }];
 
   employees = employees.map((employee) => ({...employee, updatedAt: new Date, createdAt: new Date}));

@@ -2,6 +2,7 @@ module.exports = (Promise.resolve('hola'));
 const config = require('./config/config.json');
 
 const { Sequelize, DataTypes } = require('sequelize');
+const db = require('./models');
 const sequelize = new Sequelize(
     process.env.MYSQL_DATABASE || config.development.database,
     process.env.MYSQL_USER || config.development.username,
@@ -22,3 +23,4 @@ module.exports = sequelize.authenticate().then((db) => {
     console.log('mysql connect success');
     return db;
 });
+

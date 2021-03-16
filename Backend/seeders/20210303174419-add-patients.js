@@ -13,8 +13,7 @@ let patients = [
     email: "giancarlorondo@outlock.com", 
     phone: 123456789, 
     password: bcrypt.hashSync('Pacient1$',6),
-    birth: "1991.12.05",
-    admin: false
+    birth: "1991.12.05"
   }, {
     name: "Laura",
     surname1: "Porto",
@@ -25,8 +24,7 @@ let patients = [
     email: "lauuralaura@outlock.com", 
     phone: 648498786, 
     password: bcrypt.hashSync('Pacient2$',6),
-    birth: "1994.09.06",
-    admin: false
+    birth: "1994.09.06"
   }];
 
 patients = patients.map((patient) => ({...patient, updatedAt: new Date, createdAt: new Date}));

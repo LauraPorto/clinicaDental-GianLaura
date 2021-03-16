@@ -31,11 +31,11 @@ module.exports = (sequelize, DataTypes) => {
         address: DataTypes.STRING,
         phone: DataTypes.INTEGER,
         password: DataTypes.STRING, 
-        birth: DataTypes.DATE,
-        admin: DataTypes.BOOLEAN  
+        birth: DataTypes.DATE
     }, {
         sequelize,
         modelName: 'Patient',
     });
     return Patient;
 };
+

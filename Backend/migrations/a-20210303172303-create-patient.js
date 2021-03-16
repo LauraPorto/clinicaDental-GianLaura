@@ -35,9 +35,6 @@ module.exports = {
       password: {
         type: Sequelize.STRING
       },
-      admin: {
-        type: Sequelize.BOOLEAN
-      },
       birth: {
         type: Sequelize.DATE
       },
