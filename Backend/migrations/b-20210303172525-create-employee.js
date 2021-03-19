@@ -29,6 +29,15 @@ module.exports = {
       address: {
         type: Sequelize.STRING
       },
+      city: {
+        type: Sequelize.STRING
+      },
+      State: {
+        type: Sequelize.STRING
+      },
+      Cp: {
+        type: Sequelize.INTEGER
+      },
       phone: {
         type: Sequelize.INTEGER
       },

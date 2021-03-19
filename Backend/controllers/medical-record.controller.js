@@ -1,10 +1,13 @@
-const {MedicalRecord} = require('../models');
+const {MedicalRecord, Employee} = require('../models');
 
 class MedicalRecordController {
     constructor(){}
 
     async indexAll(){
-        return MedicalRecord.findAll();
+        return MedicalRecord.findAll({
+            include: Employee
+        });
+        
     }
 
     async findById(id){

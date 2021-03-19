@@ -4,11 +4,23 @@ const employeeController = require('../controllers/employee.controller');
 //ENDPOINTS
 
 //POST para registrarse
-router.post('/register', async (req, res) => {
+router.post('/', async (req, res) => {
     try{
         let status = 'Employee created';
         let newEmployee = await employeeController.register(req.body); 
         res.json({newEmployee, status});
+    }catch(error){
+        res.status(500).json({
+            message: 'Server Error' + error
+        });
+    };
+});
+
+
+//GET para consultar todos los employees
+router.get('/', async (req, res) => {
+    try{
+        res.json(await employeeController.indexAll());
     }catch(error){
         res.status(500).json({
             message: 'Server Error' + error
@@ -27,18 +39,6 @@ router.get('/:id', async (req, res) => {
             res.sendStatus(404);
         }
         
-    }catch(error){
-        res.status(500).json({
-            message: 'Server Error' + error
-        });
-    };
-});
-
-//GET para consultar un expediente por ID
-router.get('/:id', async (req, res) => {
-    try{
-        let id = req.params.id;
-        res.json(await employeeController.findById(id));
     }catch(error){
         res.status(500).json({
             message: 'Server Error' + error
