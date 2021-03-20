@@ -23,7 +23,9 @@ module.exports = (sequelize, DataTypes) => {
     };
     
     Appointment.init({
-        date: DataTypes.DATE
+        date: DataTypes.DATE, 
+        time: DataTypes.TIME, 
+        reason: DataTypes.STRING
     }, {
         sequelize,
         modelName: 'Appointment',

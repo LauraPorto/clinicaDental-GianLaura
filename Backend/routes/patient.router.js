@@ -4,7 +4,7 @@ const patientController = require('../controllers/patient.controller');
 //ENDPOINTS
 
 //POST para registrarse
-router.post('/register', async (req, res) => {
+router.post('/', async (req, res) => {
     try{
         let status = 'Patient created';
         let newPatient = await patientController.register(req.body); 
@@ -74,7 +74,7 @@ router.get('/logout', async (req, res) => {
 });
 
 //DELETE para pacientes
-router.delete('/delete/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try{
         let id = req.params.id;
         let result = await patientController.deletePatient(id);
@@ -89,7 +89,7 @@ router.delete('/delete/:id', async (req, res) => {
 
 
 //PUT para modificar datos de paciente
-router.put('/update/:id', async(req, res) => {
+router.put('/:id', async(req, res) => {
     try {
         let id = req.params.id;
         let status = 'Success update';

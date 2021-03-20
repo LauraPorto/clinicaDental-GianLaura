@@ -4,7 +4,7 @@ const appointmentController = require('../controllers/appointment.controller');
 //ENDPOINTS
 
 //GET para consultar todas las citas 
-router.get('/all', async (req, res) => {
+router.get('/', async (req, res) => {
     try{
         res.json(await appointmentController.indexAll());
     }catch(error){
@@ -16,7 +16,7 @@ router.get('/all', async (req, res) => {
 //GET para consultar citas pendientes
 router.get('/next', async (req, res) => {
     try{
-        res.json(await appointmentController.findNextAppointments());
+        res.json(await appointmentController.findNextAppointments(req.user.id));
     }catch(error){
         res.status(500).json({
             message: 'Server Error' + error
@@ -37,7 +37,7 @@ router.get('/:id', async (req, res) => {
 });
 
 //POST para crear una cita
-router.post('/create', async (req, res) => {
+router.post('/', async (req, res) => {
     try{
         let status = 'Appointment created';
         let newAppointment = await appointmentController.createAppointment(req.body);
@@ -50,7 +50,7 @@ router.post('/create', async (req, res) => {
 });
 
 //DELETE para eliminar cita
-router.delete('/delete/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try{
         let id = req.params.id;
         let result = await appointmentController.deleteAppointment(id);
@@ -64,7 +64,7 @@ router.delete('/delete/:id', async (req, res) => {
 });
 
 //UPDATE para modificar datos de la cita
-router.put('/update/:id', async(req, res) => {
+router.put('/:id', async(req, res) => {
     try {
         let id = req.params.id;
         let status = 'Success update';

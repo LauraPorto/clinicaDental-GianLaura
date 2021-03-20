@@ -17,6 +17,9 @@ module.exports = {
       surname2: {
         type: Sequelize.STRING
       },
+      age: {
+        type: Sequelize.INTEGER
+      }, 
       gender: {
         type: Sequelize.STRING
       },
@@ -25,6 +28,15 @@ module.exports = {
       },
       address: {
         type: Sequelize.STRING
+      },
+      city: {
+        type: Sequelize.STRING
+      }, 
+      state: {
+        type: Sequelize.STRING
+      }, 
+      cp: {
+        type: Sequelize.INTEGER
       },
       phone: {
         type: Sequelize.INTEGER
@@ -37,6 +49,9 @@ module.exports = {
       },
       specialty: {
         type: Sequelize.STRING
+      },
+      admin: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
