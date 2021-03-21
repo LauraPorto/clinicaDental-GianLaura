@@ -4,7 +4,8 @@ const secret = process.env.JWT_SECRET || 'pwsSecret';
 
 const auth = async (req, res, next) => {
     //si estoy en login o register, no verifiques el token de autenticación
-    if(req.url.endsWith('/login') || req.url.endsWith('/register')){
+    console.log(req);
+    if(req.url.endsWith('/login') || (req.method === 'POST' && (req.baseUrl.endsWith('/patients') || req.baseUrl.endsWith('/employees')))){
         next();
         return;
     }
