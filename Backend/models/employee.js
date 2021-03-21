@@ -29,13 +29,8 @@ module.exports = (sequelize, DataTypes) => {
         age: DataTypes.INTEGER,
         email: DataTypes.STRING,
         address: DataTypes.STRING,
-<<<<<<< HEAD
         city: DataTypes.STRING, 
         state: DataTypes.STRING, 
-=======
-        city: DataTypes.STRING,
-        state: DataTypes.STRING,
->>>>>>> main
         cp: DataTypes.INTEGER,
         phone: DataTypes.INTEGER,
         password: DataTypes.STRING, 
