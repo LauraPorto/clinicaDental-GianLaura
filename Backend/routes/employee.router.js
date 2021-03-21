@@ -19,8 +19,7 @@ router.post('/', async (req, res) => {
 //GET para consultar todos los employees
 router.get('/', async (req, res) => {
     try{
-        res.json(await employeeController.indexAll());
-        
+        res.json(await employeeController.indexAll());   
     }catch(error){
         res.status(500).json({
             message: 'Server Error' + error
@@ -28,7 +27,7 @@ router.get('/', async (req, res) => {
     };
 });
 
-//GET para consultar un expediente por ID
+//GET para id employee
 router.get('/:id', async (req, res) => {
     try{
         let id = req.params.id;

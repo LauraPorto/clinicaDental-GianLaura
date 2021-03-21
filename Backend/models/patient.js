@@ -30,11 +30,19 @@ module.exports = (sequelize, DataTypes) => {
         email: DataTypes.STRING,
         address: DataTypes.STRING,
         city: DataTypes.STRING,
+<<<<<<< HEAD
         state: DataTypes.STRING, 
         cp: DataTypes.INTEGER,
         phone: DataTypes.INTEGER,
         password: DataTypes.STRING, 
         birth: DataTypes.DATE
+=======
+        state: DataTypes.STRING,
+        cp: DataTypes.INTEGER,
+        phone: DataTypes.INTEGER,
+        password: DataTypes.STRING, 
+        birth: DataTypes.DATE,
+>>>>>>> main
     }, {
         sequelize,
         modelName: 'Patient',

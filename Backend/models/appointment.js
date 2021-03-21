@@ -23,8 +23,13 @@ module.exports = (sequelize, DataTypes) => {
     };
     
     Appointment.init({
+<<<<<<< HEAD
         date: DataTypes.DATE, 
         time: DataTypes.TIME, 
+=======
+        date: DataTypes.DATE,
+        time: DataTypes.TIME,
+>>>>>>> main
         reason: DataTypes.STRING
     }, {
         sequelize,

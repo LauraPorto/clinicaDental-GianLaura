@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
         });
     };
 });
+
 //GET para consultar citas pendientes
 router.get('/next', async (req, res) => {
     try{

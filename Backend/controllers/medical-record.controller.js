@@ -1,4 +1,4 @@
-const {MedicalRecord} = require('../models');
+const {MedicalRecord, Employee} = require('../models');
 
 class MedicalRecordController {
     constructor(){}
