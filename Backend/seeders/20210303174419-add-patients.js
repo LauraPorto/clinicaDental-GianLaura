@@ -14,7 +14,7 @@ let patients = [
     state: "Valencia",
     cp: 46180,
     email: "giancarlorondo@outlock.com", 
-    phone: 123456789, 
+    phone: 648498786, 
     password: bcrypt.hashSync('Pacient1$',6),
     birth: "1991.12.05"
   }, {

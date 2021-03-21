@@ -4,7 +4,8 @@ const secret = process.env.JWT_SECRET || 'pwsSecret';
 
 const auth = async (req, res, next) => {
     //si estoy en login o register, no verifiques el token de autenticación
-    if(req.url.endsWith('/login') || req.url.endsWith('/register')){
+    console.log(req);
+    if(req.url.endsWith('/login') || (req.method === 'POST' && (reqbaseUrl.e.ndsWith('/patients') || req.baseUrl.endsWith('/employees')))){
         next();
         return;
     }
@@ -14,9 +15,10 @@ const auth = async (req, res, next) => {
         const payload = jwt.verify(authorization, secret);
 
         req.user = {
-            id: payload.patientId || payload.employeeId, 
+            id: payload.patientId || payload.employeeId,
             userType: payload.patientId? 'Patient' : 'Employee'
         };
+        
         //##############
         //Extraemos el valor de administrador para saber si entrará a las rutas como empleado o como paciente
         //const admin = req.body.admin;

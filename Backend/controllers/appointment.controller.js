@@ -8,7 +8,7 @@ class AppointmentController {
         return Appointment.findAll();
     }
     
-    async findNextAppointments(){
+    async findNextAppointments(patientId){
         return Appointment.findAll({where:{idPatient: patientId, date: {[Op.gte]: new Date}}});
     }
 

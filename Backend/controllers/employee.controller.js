@@ -11,7 +11,7 @@ class EmployeeController {
     constructor(){}
 
     async indexAll(){
-        return Employee.findAll();
+         return Employee.findAll();
     }
 
     async findById(id){

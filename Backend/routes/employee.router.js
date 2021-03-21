@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
     };
 });
 
-//GET para consultar un expediente por ID
+//GET para id employee
 router.get('/:id', async (req, res) => {
     try{
         let id = req.params.id;
