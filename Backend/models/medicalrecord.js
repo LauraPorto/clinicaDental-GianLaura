@@ -24,7 +24,9 @@ module.exports = (sequelize, DataTypes) => {
 
     MedicalRecord.init({
         description: DataTypes.STRING,
-        allergy: DataTypes.STRING
+        allergy: DataTypes.STRING, 
+        idEmployee: DataTypes.INTEGER, 
+        idPatient: DataTypes.INTEGER
     }, {
         sequelize,
         modelName: 'MedicalRecord',

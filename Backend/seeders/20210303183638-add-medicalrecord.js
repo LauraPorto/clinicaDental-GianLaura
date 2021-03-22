@@ -3,10 +3,14 @@
 let medicalrecords = [
   {
     description: "Dolor de muelas", 
-    allergy: "No"
+    allergy: "No", 
+    idEmployee: 1, 
+    idPatient: 2
   }, {
     description: "Limpieza", 
-    allergy: "Penicilina"
+    allergy: "Penicilina", 
+    idEmployee: 2, 
+    idPatient: 1
   }];
 
 medicalrecords = medicalrecords.map((medicalrecord) => ({...medicalrecord, updatedAt: new Date, createdAt: new Date}));
